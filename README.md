@@ -4,6 +4,32 @@ API ASP.NET Core para gestão de clientes e fornecedores, Teste técnico — Fas
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
+## Pré-requisitos
+
+Se estiver a iniciar o projeto numa máquina nova, confirme que tem instalado o SDK correto e as ferramentas de Entity Framework Core antes de executar a API ou as migrações.
+
+Instale o SDK .NET 10.
+
+```bash
+dotnet --version
+```
+
+Se o comando não devolver uma versão 10.x, instale o .NET 10 SDK antes de continuar.
+
+Instale a CLI do Entity Framework Core, caso o comando `dotnet ef` ainda não exista:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+Verifique se a ferramenta está disponível:
+
+```bash
+dotnet ef --version
+```
+
+Confirme também que o SQL Server local está acessível a partir da máquina e que a connection string configurada em `appsettings.json` aponta para uma instância válida.
+
 ## Inicialização rápida (do clone ao run)
 
 1. Clone do repositório:
@@ -39,34 +65,6 @@ dotnet ef database update
 ```bash
 dotnet run
 ```
-
-6. Opcional
-
-## Pré-requisitos
-
-Se estiver a iniciar o projeto numa máquina nova, confirme que tem instalado o SDK correto e as ferramentas de Entity Framework Core antes de executar a API ou as migrações.
-
-61. Instale o SDK .NET 10.
-
-```bash
-dotnet --version
-```
-
-Se o comando não devolver uma versão 10.x, instale o .NET 10 SDK antes de continuar.
-
-62. Instale a CLI do Entity Framework Core, caso o comando `dotnet ef` ainda não exista:
-
-```bash
-dotnet tool install --global dotnet-ef
-```
-
-63. Verifique se a ferramenta está disponível:
-
-```bash
-dotnet ef --version
-```
-
-64. Confirme também que o SQL Server local está acessível a partir da máquina e que a connection string configurada em `appsettings.json` aponta para uma instância válida.
 
 > Ao iniciar a aplicação, o código de bootstrap executa automaticamente o seeding inicial da base de dados. Isto significa que o `dotnet run` também preenche a tabela com dados de exemplo, caso a base esteja vazia.
 
