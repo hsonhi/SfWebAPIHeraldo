@@ -1,6 +1,6 @@
 # Sf-Web API
 
-API ASP.NET Core para gestão de clientes e fornecedores.
+API ASP.NET Core para gestão de clientes e fornecedores, Teste técnico — Fase 2 para a ******** Web.
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
@@ -40,6 +40,8 @@ dotnet ef database update
 dotnet run
 ```
 
+> Ao iniciar a aplicação, o código de bootstrap executa automaticamente o seeding inicial da base de dados. Isto significa que o `dotnet run` também preenche a tabela com dados de exemplo, caso a base esteja vazia.
+
 6. Acesse a documentação Swagger:
 
 - http://localhost:5000/swagger
@@ -68,8 +70,9 @@ SfWebAPIHeraldo/
 │   └── Services/
 │       └── PartnerService.cs
 ├── Infrastructure/
-│   ├── DI/
-│   │   └── AppDbContext.cs
+│   ├── Data/
+│   │   └── AppDbContext.
+│   │   └── PartnerSeeder.cs
 │   ├── Dto/
 │   │   └── Partners/
 │   │       ├── CreateDto.cs
