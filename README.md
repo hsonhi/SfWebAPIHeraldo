@@ -23,6 +23,32 @@ dotnet restore
 
 ```json
 "ConnectionStrings": {
+## Pré-requisitos
+
+Se estiver a iniciar o projeto numa máquina nova, confirme que tem instalado o SDK correto e as ferramentas de Entity Framework Core antes de executar a API ou as migrações.
+
+1. Instale o SDK .NET 10.
+
+```bash
+dotnet --version
+```
+
+Se o comando não devolver uma versão 10.x, instale o .NET 10 SDK antes de continuar.
+
+2. Instale a CLI do Entity Framework Core, caso o comando `dotnet ef` ainda não exista:
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+3. Verifique se a ferramenta está disponível:
+
+```bash
+dotnet ef --version
+```
+
+4. Confirme também que o SQL Server local está acessível a partir da máquina e que a connection string configurada em `appsettings.json` aponta para uma instância válida.
+
   "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=SF_WEBAPI;Trusted_Connection=True;TrustServerCertificate=True;"
 }
 ```
@@ -44,8 +70,7 @@ dotnet run
 
 6. Acesse a documentação Swagger:
 
-- http://localhost:5000/swagger
-- https://localhost:5001/swagger
+- http://localhost:5092/swagger
 
 > Se o SQL Server não estiver disponível, a aplicação não iniciará corretamente porque a API depende da connection string configurada.
 
