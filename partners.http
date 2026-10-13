@@ -1,0 +1,39 @@
+@baseUrl = https://localhost:5001
+
+### Listar parceiros
+GET {{baseUrl}}/api/partners?page=1&pageSize=10
+Accept: application/json
+
+### Filtrar parceiros
+GET {{baseUrl}}/api/partners?search=ana&type=CUSTOMER&includeInactive=false&page=1&pageSize=10
+Accept: application/json
+
+### Obter parceiro por id
+GET {{baseUrl}}/api/partners/11111111-2222-3333-4444-555555666666
+Accept: application/json
+
+### Criar parceiro
+POST {{baseUrl}}/api/partners
+Content-Type: application/json
+
+{
+  "name": "Ana Silva",
+  "taxNumber": "001.234.567",
+  "type": "CUSTOMER",
+  "email": "ana.silva@email.com",
+  "creditLimit": 2500.00
+}
+
+### Atualizar parceiro
+PUT {{baseUrl}}/api/partners/11111111-2222-3333-4444-555555666666
+Content-Type: application/json
+
+{
+  "name": "Ana Silva",
+  "taxNumber": "001234567",
+  "type": "CUSTOMER",
+  "email": "ana.silva@novaempresa.com",
+  "creditLimit": 3200.00,
+  "isActive": true,
+  "version": "AQAA..."
+}
