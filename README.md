@@ -28,8 +28,6 @@ Verifique se a ferramenta está disponível:
 dotnet ef --version
 ```
 
-Confirme também que o SQL Server local está acessível a partir da máquina e que a connection string configurada em `appsettings.json` aponta para uma instância válida.
-
 ## Inicialização rápida (do clone ao run)
 
 1. Clone do repositório:
@@ -71,8 +69,6 @@ dotnet run
 6. Acesse a documentação Swagger:
 
 - http://localhost:5092/swagger
-
-> Se o SQL Server não estiver disponível, a aplicação não iniciará corretamente porque a API depende da connection string configurada.
 
 ## Stack tecnológica
 

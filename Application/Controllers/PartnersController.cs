@@ -34,7 +34,7 @@ public sealed class PartnersController(IPartnerService partnerService) : Control
                 {
                     Status = 404,
                     ErrorCode = "NOT_FOUND",
-                    Message = "Partner não encontrado.",
+                    Message = "Registo não encontrado.",
                 }
             );
 
@@ -85,6 +85,15 @@ public sealed class PartnersController(IPartnerService partnerService) : Control
     public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
     {
         var partner = await partnerService.GetByIdAsync(id, cancellationToken);
-        return partner is null ? NotFound() : Ok(partner);
+        return partner is null
+            ? NotFound(
+                new
+                {
+                    Status = 404,
+                    ErrorCode = "NOT_FOUND",
+                    Message = "Registo não encontrado.",
+                }
+            )
+            : Ok(partner);
     }
 }
